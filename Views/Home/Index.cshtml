@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading clearfix">
+        <h3 class="panel-title pull-left"><i class="fa fa-list"></i> DataTable</h3>
+        <div class="pull-right">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                <input id="datatable-filter" type="text" class="form-control" placeholder="Search..." />
+            </div>
+        </div>
+    </div>
+    <table id="datatable" data-url="/Home/GetAll" class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Occupation</th>
+                <th style="width: 1%"></th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<script>
+    $(document).ready(function() {
+        dataTable.getData();
+    })
+
+    var dataTable = {
+        table: null,
+        initializeDataTable: function() {
+            var $tabela = $("#datatable");
+
+            dataTable.table = $tabela.DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: {
+                    url: $tabela.data("url"),
+                    type: "POST",
+                    dataSrc: "data",
+                    data: function(x) {
+
+                    }
+                },
+                columns: [
+                    { data: "name" },
+                    { data: "city" },
+                    { data: "state" },
+                    { data: "occupation" },
+                    { 
+                        data: "id",
+                        render: function (data, type, row) {
+                            return "<a data-id='" + data + "' href='#' class='delete'><i class='fa fa-trash text-danger'></i></a>"
+                        }
+                    },
+                ],
+                columnDefs: [],
+                ordering: false,
+                pageLength: 10,
+                dom: 't<"panel-footer clearfix"<"pull-left"i><"pull-right"p>>'
+            });
+
+            dataTable.table.on('draw', function () {
+                $("a.delete").click(function() {
+                    var id = $(this).data("id");
+                    alert("Deleted (" + id + ")!!!");
+                });
+            });
+
+            $("#datatable-filter").keyup(function(e) {
+                if (e.keyCode === 13)
+                    dataTable.table.search($(this).val()).draw();
+            });
+        },
+        getData: function() {
+            if (dataTable.table == null)
+                dataTable.initializeDataTable();
+            else
+                dataTable.table.ajax.reload();
+        }
+    }
+</script>

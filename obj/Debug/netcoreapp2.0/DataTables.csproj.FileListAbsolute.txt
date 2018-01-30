@@ -1,0 +1,10 @@
+C:\Users\schie\Documents\VSCode\DataTables\bin\Debug\netcoreapp2.0\DataTables.deps.json
+C:\Users\schie\Documents\VSCode\DataTables\bin\Debug\netcoreapp2.0\DataTables.runtimeconfig.json
+C:\Users\schie\Documents\VSCode\DataTables\bin\Debug\netcoreapp2.0\DataTables.runtimeconfig.dev.json
+C:\Users\schie\Documents\VSCode\DataTables\bin\Debug\netcoreapp2.0\DataTables.dll
+C:\Users\schie\Documents\VSCode\DataTables\bin\Debug\netcoreapp2.0\DataTables.pdb
+C:\Users\schie\Documents\VSCode\DataTables\obj\Debug\netcoreapp2.0\DataTables.csproj.CoreCompileInputs.cache
+C:\Users\schie\Documents\VSCode\DataTables\obj\Debug\netcoreapp2.0\DataTables.AssemblyInfoInputs.cache
+C:\Users\schie\Documents\VSCode\DataTables\obj\Debug\netcoreapp2.0\DataTables.AssemblyInfo.cs
+C:\Users\schie\Documents\VSCode\DataTables\obj\Debug\netcoreapp2.0\DataTables.dll
+C:\Users\schie\Documents\VSCode\DataTables\obj\Debug\netcoreapp2.0\DataTables.pdb
