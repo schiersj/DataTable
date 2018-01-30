@@ -45,6 +45,8 @@ namespace DataTables.Controllers
         {
             if (string.IsNullOrWhiteSpace(searchBy)) return null;
 
+            searchBy = searchBy.ToUpperInvariant();
+
             return query => query.Name.ToUpperInvariant().Contains(searchBy) ||
                             query.City.ToUpperInvariant().Contains(searchBy) ||
                             query.State.ToUpperInvariant().Contains(searchBy) ||
